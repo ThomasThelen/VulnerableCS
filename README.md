@@ -16,10 +16,11 @@ Buffer Overflow
 <br>
   Demonstrates the rare case where a C# application is vulnerable to a buffer overflow. A couple of conditions must be met inorder to perform a buffer overflow. This is due to CRL's garbage colelction! It is well knownthat c# creates space on the heap instead of the stack. In order to order to force CRL to create the variable on the stack, 
 
+[stackalloc](https://msdn.microsoft.com/en-us/library/cx9s2sy4.aspx)
 
-stackalloc
+must be used in the variable's definition. Because this is considered unsafe, you must first allow unsafe code in the project settings. The metod must also be declared unsafe.
 
-must be used in the variable's definition. BEcause this is considered unsafe, you must first allow unsafe code in the project settings. The metod must also be declared unsafe.
+[stackalloc](https://msdn.microsoft.com/en-us/library/chfa2zb8.aspx)
 
 Before entering the loop, the memory location of the variable "number" is displayed...
 
