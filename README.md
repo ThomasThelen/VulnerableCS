@@ -31,6 +31,7 @@ After running through the loop a single time, the memory looks like.
 ![](http://imgur.com/MW7SrMQ.jpg)
 
 Running through a second time displays a memory profile of
+
 ![](http://imgur.com/8Q57e5k.jpg)
 
 Note that the end of allocated memory has been reached. Any further addition will overrun the stack and cause a segmentation fault.
