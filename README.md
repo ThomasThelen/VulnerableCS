@@ -1,26 +1,16 @@
 # VulnerableCS
 A collection of proof-of-concept exploitable applications in C#
 
-SQL Injections
+## SQL Injection
 
-1. SimpleSqlInjection
-<br>
-  An application that connects to a MySQL database and checks if the username and password supplied by the user is valid. Can be exploited by essentially any injection vector.
-2. HexEncodedInjection
-<br>
-  An application that filters regular ascii however, fails to consider injections coded in hex.
-  
-Buffer Overflow
+  An application that connects to a MySQL database and checks if the username and password supplied by the user is valid. Can be exploited by essentially any injection vector. This is due to a lack of input sanitation.
 
-1. SimpleOverflow
-<br>
-  Demonstrates the rare case where a C# application is vulnerable to a buffer overflow. A couple of conditions must be met inorder to perform a buffer overflow. This is due to CRL's garbage colelction! It is well knownthat c# creates space on the heap instead of the stack. In order to order to force CRL to create the variable on the stack, 
+## Buffer Overflow
 
+  Demonstrates the rare case where a C# application is vulnerable to a buffer overflow. A couple of conditions must be met in order to perform a buffer overflow. This is due to CRL's garbage colelction! It is well known that c# creates space on the heap instead of the stack. In order to order to force CRL to create the variable on the stack, 
 [stackalloc](https://msdn.microsoft.com/en-us/library/cx9s2sy4.aspx)
+must be used in the variable's definition. Because this is considered unsafe, you must first allow unsafe code in the project settings. The metod must also be declared unsafe. [unsafe keyword](https://msdn.microsoft.com/en-us/library/chfa2zb8.aspx)
 
-must be used in the variable's definition. Because this is considered unsafe, you must first allow unsafe code in the project settings. The metod must also be declared unsafe.
-
-[stackalloc](https://msdn.microsoft.com/en-us/library/chfa2zb8.aspx)
 
 Before entering the loop, the memory location of the variable "number" is displayed...
 
